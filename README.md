@@ -32,36 +32,36 @@
 
 ### 실험 과정
 
-0. 촬영 환경 세팅
+#### 0. 촬영 환경 세팅
 * 학교에서 진행했던 프로젝트이며, 같은 위치에서 찍기 위해 상자에 구멍을 뚫어 환경을 만들었다.
 * 초반 물체 선택에 있어서 아무거나 골랐지만, 추후 흰 배경에 검은 물체 위주로 선택하였다.
 
 ![image](https://user-images.githubusercontent.com/57992071/110107952-eb66bf80-7dee-11eb-966c-5434c58de73c.png)
 
 
-1. 분류하고자 하는 물체 사진 촬영 & 이미지 불러오기 : 많을 수록 구분하기 좋다.
+#### 1. 분류하고자 하는 물체 사진 촬영 & 이미지 불러오기 : 많을 수록 구분하기 좋다.
 
 ![image](https://user-images.githubusercontent.com/57992071/110105531-da687f00-7deb-11eb-98be-4d2a90da9c1e.png)
 
-2. Threshold & Closing, Opening 적용
+#### 2. Threshold & Closing, Opening 적용
 * 내부에서 Grayscale 이미지로 변환된 다음, Minimum Fuzziness Method로 Threshold를 처리
 * Closing & Opening을 적용해서 구멍을 메우고, 오브젝트 주변의 노이즈를 제거한다.
 
 ![image](https://user-images.githubusercontent.com/57992071/110105654-01bf4c00-7dec-11eb-8ce8-0e4c3fdd23bb.png)
 
-3. Contour Features & Measurement
+#### 3. Contour Features & Measurement
 * Contours를 통해 이미지의 물체 테두리를 탐색하고 각 오브젝트마다 Area, Perimeter, Formfactor 값을 측정한다.
 
 ![image](https://user-images.githubusercontent.com/57992071/110106042-83af7500-7dec-11eb-8b02-19b2ef275dcf.png)
 
-4. Training Data Load & Plot
+#### 4. Training Data Load & Plot
 * 측정된 값을 통해 오브젝트를 비교할 척도를 결정한다.
 * 이 데이터에서는 Perimeter와 Formfactor를 통한 오브젝트의 분류가 가장 적합하다.
 * 각 오브젝트 당 3개씩으로 분포를 확인하여도 잘 분류됨을 확인할 수 있다.
 
 ![image](https://user-images.githubusercontent.com/57992071/110106127-a2157080-7dec-11eb-9740-046323accc3c.png)
 
-5. Classification
+#### 5. Classification
 * 기존에 분류되어 있던 오브젝트의 성분 값의 평균을 구하고 현재 분류하려는 오브젝트의 성분 값과의 거리를 계산하여, 가장 가까운 거리를 가진 쪽으로 분류한다.
 * 최종적으로, 다른 이미지를 추가하였을 때에도 오브젝트를 잘 구분할 수 있다.
 
