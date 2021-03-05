@@ -61,7 +61,7 @@
 
 ![image](https://user-images.githubusercontent.com/57992071/110106127-a2157080-7dec-11eb-9740-046323accc3c.png)
 
-#### 5. Classification
+#### 5. Classification & Results
 * 기존에 분류되어 있던 오브젝트의 성분 값의 평균을 구하고 현재 분류하려는 오브젝트의 성분 값과의 거리를 계산하여, 가장 가까운 거리를 가진 쪽으로 분류한다.
 * 최종적으로, 다른 이미지를 추가하였을 때에도 오브젝트를 잘 구분할 수 있다.
 
